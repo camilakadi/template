@@ -28,3 +28,7 @@ function includeHTML() {
 		}
 	}
 }
+
+$().ready(function () {
+    $("#formTelefone").validate();
+});

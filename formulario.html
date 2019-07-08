@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -28,12 +29,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" w3-include-html="includes/topbar.html">
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Formulário</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Preencher informações de suporte</h1>
                     </div>
 
                     <div class="row">
@@ -42,10 +42,37 @@
                             <!-- Basic Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Resultado geral - Telefone</h6>
                                 </div>
                                 <div class="card-body">
-                                    The styling for this basic card example is created by using default Bootstrap utility classes. By using utility classes, the style of the card component can be easily modified with no need for any custom CSS!
+                                    <form name="formTelefone" id="formTelefone" method="get" autocomplete="off">
+                                        <div class="form-group">
+                                            <label for="adata">Data</label>
+                                            <input type="date" class="form-control" id="adata" name="adata" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="aabandonosChamada">Abandonos de chamada (%)</label>
+                                            <input type="text" class="form-control" id="aabandonosChamada" name="aabandonosChamada" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="atempoMedioEspera">Tempo médio de espera (min)</label>
+                                            <input type="text" class="form-control" id="atempoMedioEspera" name="atempoMedioEspera" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="atempoMedioAtendimento">Tempo médio de atendimento (min)</label>
+                                            <input type="text" class="form-control" id="atempoMedioAtendimento" name="atempoMedioAtendimento" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="anivelServico">Nível de serviço (%)</label>
+                                            <input type="text" class="form-control" id="anivelServico" name="anivelServico" required>
+                                        </div>
+                                        <button class="btn btn-warning">
+                                            Limpar
+                                        </button>
+                                        <button class="btn btn-success" type="submit" value="submitTelefone">
+                                            Enviar
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +120,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
