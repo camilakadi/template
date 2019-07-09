@@ -18,7 +18,46 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" w3-include-html="includes/sidebar.html"></ul>
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">hello</div>
+            </a>
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="formulario.html">
+                    <i class="fab fa-fw fa-wpforms"></i>
+                    <span>Formulário Suporte técnico</span>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="suporte-tecnico.html">
+                    <i class="fab fa-fw fa-wpforms"></i>
+                    <span>Suporte técnico</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -33,7 +72,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Suporte técnico - nível de serviços</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Suporte técnico - nível de serviços <span id="dataTelefoneTexto"></span></h1>
                     </div>
                     <div class="row">
 

@@ -13,12 +13,52 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" w3-include-html="includes/sidebar.html"></ul>
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">hello</div>
+            </a>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="formulario.html">
+                    <i class="fab fa-fw fa-wpforms"></i>
+                    <span>Formulário Suporte técnico</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="suporte-tecnico.html">
+                    <i class="fab fa-fw fa-wpforms"></i>
+                    <span>Suporte técnico</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -45,7 +85,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Resultado geral - Telefone</h6>
                                 </div>
                                 <div class="card-body">
-                                    <form name="formTelefone" id="formTelefone" method="get" autocomplete="off">
+                                    <form name="formTelefone" id="formTelefone" method="get" action="#" autocomplete="off">
                                         <div class="form-group">
                                             <label for="adata">Data</label>
                                             <input type="date" class="form-control" id="adata" name="adata" required>
@@ -66,10 +106,10 @@
                                             <label for="anivelServico">Nível de serviço (%)</label>
                                             <input type="text" class="form-control" id="anivelServico" name="anivelServico" required>
                                         </div>
-                                        <button class="btn btn-warning">
+                                        <button class="btn btn-warning" onclick="limparFormularioTelefone();">
                                             Limpar
                                         </button>
-                                        <button class="btn btn-success" type="submit" value="submitTelefone">
+                                        <button class="btn btn-success" type="submit" value="submitTelefone" onclick="pegarValoresFormTelefone();">
                                             Enviar
                                         </button>
                                     </form>
