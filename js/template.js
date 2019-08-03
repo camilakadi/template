@@ -1,6 +1,6 @@
-inicializarPagina();
-
 $().ready(function () {
+    inicializarPagina();
+
     $("#formTelefone").validate({
         rules: {
             adata: {
@@ -32,7 +32,12 @@ function inicializarPagina() {
 }
 
 function pegarValoresFormTelefone() {
-    let formularioTelefone = {
+    var formulariosTelefones = pegarLocalStorage("formulariosTelefonesChave");
+
+    if (formulariosTelefones === null)
+        formulariosTelefones = [];
+
+    var formularioTelefone = {
         data: document.getElementById("adata").value,
         abandonosChamada: document.getElementById("aabandonosChamada").value,
         tempoMedioEspera: document.getElementById("atempoMedioEspera").value,
@@ -40,7 +45,10 @@ function pegarValoresFormTelefone() {
         nivelServico: document.getElementById("anivelServico").value
     };
 
-    armazenarLocalStorage("formularioTelefone", formularioTelefone);
+    formulariosTelefones.push(formularioTelefone);
+
+    armazenarLocalStorage("formulariosTelefonesChave", formulariosTelefones);
+
 }
 
 function armazenarLocalStorage(chave, objeto) {
@@ -52,13 +60,31 @@ function pegarLocalStorage(chave) {
 }
 
 function mostrarValoresTelefone() {
-    let formularioTelefone = pegarLocalStorage("formularioTelefone");
-    console.log(formularioTelefone);
-    console.log(formularioTelefone.data);
+    var formularioTelefoneDados = pegarLocalStorage("formulariosTelefonesChave");
+    console.log(formularioTelefoneDados);
+
+    var selecioneMesAno = document.getElementById("selecioneMesAno");
+
+    formularioTelefoneDados.forEach(function (formularioTelefone, key) {
+        var data = new Date(formularioTelefone.data);
+
+        //preenchendo o option do html
+        var option = document.createElement("option");
+        option.value = key;
+        option.textContent = data.getMonth() + "/" + data.getFullYear();
+
+        selecioneMesAno.appendChild(option);
+
+    });
 
 
-    document.getElementById("dataTelefoneTexto").innerHTML = formularioTelefone.data;
+    //console.log(formularioTelefoneDado.data);
 
+    //var dataTelefoneTexto = document.getElementById("dataTelefoneTexto");
+
+    //if (dataTelefoneTexto) {
+    //    dataTelefoneTexto.innerHTML = formularioTelefoneDado.data;
+    //}
 }
 
 function limparFormularioTelefone() {
